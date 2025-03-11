@@ -5,27 +5,60 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     </head>
     <body>
         <header>
+            <nav class="header-nav">
+                <a href="{% url "home" %}" class="header-nav-link reset-link {% if request.path == '/' %}active-header-nav-link{% endif %}">Home</a>
+                <a href="{% url "products" %}" class="header-nav-link reset-link {% if request.path == '/products/' %}active-header-nav-link{% endif %}">Products</a>
+            </nav>
+            <a class="header-logo reset-link" href="{% url "home" %}">
+                <h1>Style<span>.</span>Loom</h1>
+            </a>
             <div>
-                <span>Home</span>
-                <span>Products</span>
-            </div>
-            <div>
-                <h2>Style.Loom</h2>
-            </div>
-            <div>
-                <button>
-                    <img src="" alt="cart_icon">
-                </button>
-                <button>Contact</button>
+                <a href="{% url "contact" %}" class="header-contact-link reset-link">Contact</a>
             </div>
         </header>
 
         <main>{% block content %}{% endblock %}</main>
 
-        <footer></footer>
+        <footer>
+            <div class="footer-top">
+                <div class="footer-top-list">
+                    <h3>Home</h3>
+                    <ul>
+                        <li>Why Us</li>
+                        <li>About Us</li>
+                        <li>Testimonials</li>
+                        <li>FAQ's</li>
+                </ul>
+                </div>
+                <div class="footer-top-list">
+                    <h3>Products</h3>
+                    <ul>
+                        <li>Menswear</li>
+                        <li>Womenswear</li>
+                        <li>Kidswear</li>
+                    </ul>
+                </div>
+                <div class="footer-top-subscribe">
+                    <h3>Subscribe</h3>
+                    <form class="subscribe-form" action="" method="post">
+                        <input type="email" name="email" id="email" placeholder="Your Email" />
+                        <button type="submit"><img src="{% static "images/subscribe-icon.svg" %}" alt="subscribe-icon"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-rights">
+                    <p>© 2025 StyleLoom. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-terms">
+                    <span>Terms & Conditions</span>
+                    <span>Privacy Policy</span>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

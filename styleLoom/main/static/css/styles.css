@@ -1,5 +1,4 @@
 @import url(./variables.css);
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&family=Ojuju:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
     margin: 0;
@@ -8,6 +7,191 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;    
+    font-family: "Roboto", sans-serif;
     background-color: var(--color-dark-06);
 }
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0 120px;
+    border-bottom: 2px dashed var(--color-dark-15);
+}
+
+.reset-button {
+    border: none;
+    background-color: transparent;
+}
+
+.reset-link {
+    text-decoration: none;
+    color: var(--color-abs-white);
+}
+
+.header-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.header-nav-link {
+    padding: 15px 25px;
+    border: 1px dashed var(--color-dark-15);
+    border-radius: 12px;
+    color: var(--color-grey-70);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.header-nav-link:hover {
+    background-color: var(--color-brown-60);
+    border: 1px solid var(--color-brown-60);
+    color: var(--color-dark-06);
+}
+
+.header-contact-link {
+    padding: 15px 30px;
+    border-radius: 12px;
+    color: var(--color-dark-06);
+    background-color: var(--color-brown-60);
+    border: 1px solid var(--color-brown-60);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.header-contact-link:hover {
+    background-color: var(--color-dark-06);
+    border: 1px dashed var(--color-dark-15);
+    color: var(--color-abs-white);
+}
+
+.active-header-nav-link,
+.active-header-nav-link:hover {
+    background-color: var(--color-dark-10);
+    border: 1px solid var(--color-dark-10);
+    color: var(--color-abs-white);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.header-logo h1 {
+    color: var(--color-abs-white);
+}
+
+.header-logo h1 span {
+    color: var(--color-brown-65);
+}
+
+/* ===== HEADER END ===== */
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 120px;
+    border-top: 2px dashed var(--color-dark-15);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 60px 0;
+    width: 100%;
+    border-bottom: 2px dashed var(--color-dark-15);
+}
+
+.footer-top-list,
+.footer-top-subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-top-subscribe h3,
+.footer-top-list h3 {
+    color: var(--color-abs-white);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.footer-top-list ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-top-list ul li {
+    color: var(--color-grey-40);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.footer-top-list ul li:hover {
+    color: var(--color-abs-white);
+    cursor: pointer;
+}
+
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-form input {
+    padding: 15px 24px;
+    border-radius: 12px 0 0 12px;
+    border: none;
+    outline: none;
+    color: var(--color-grey-40);
+    background-color: var(--color-dark-10);
+    font-size: 16px;
+}
+
+.subscribe-form button {
+    padding: 15px 24px;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    color: var(--color-abs-white);
+    background-color: var(--color-dark-10);
+}
+
+.subscribe-form button:hover {
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-bottom-terms {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-bottom-terms span,
+.footer-bottom-rights p {
+    color: var(--color-grey-50);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-bottom-rights p:hover,
+.footer-bottom-terms span:hover {
+    color: var(--color-abs-white);
+    cursor: pointer;
+}
+
+.footer-bottom-terms span:first-child {
+    border-right: 2px solid var(--color-grey-50);
+    padding-right: 10px;
+}
+/* ===== FOOTER END ===== */
+
