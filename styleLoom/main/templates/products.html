@@ -1,6 +1,44 @@
 {% extends 'base.html' %} 
-{% block title %}Products{% endblock %}
+{% load static %} 
+
+{% block title %}Products{% endblock %} 
 
 {% block content %}
-<h1>Products</h1>
+<div class="products-container">
+    <div class="products-header">
+        <h1>Explore the Latest Trends and Timeless Classics</h1>
+        <p>
+            Dive into the world of fashion excellence at StyleLoom. Our curated
+            selection brings together the latest trends and timeless classics
+        </p>
+        <div class="products-filter">
+            <a href="?gender=all" class="reset-link header-nav-link {% if gender_filter == 'all' %}header-contact-link{% endif %}">All</a>
+            <a href="?gender=men" class="reset-link header-nav-link {% if gender_filter == 'men' %}header-contact-link{% endif %}">Men's</a>
+            <a href="?gender=women" class="reset-link header-nav-link {% if gender_filter == 'women' %}header-contact-link{% endif %}">Women's</a>
+            <a href="?gender=kids" class="reset-link header-nav-link {% if gender_filter == 'kids' %}header-contact-link{% endif %}">Kid's</a>
+        </div>
+    </div>
+    <div class="products">
+        {% for product in products %}
+        <div class="product">
+            <div class="product-img">
+                <img
+                    src="{% if product.image %}{{ product.image.url }} {% else %}{% static 'images/noname.png' %}{% endif %}"
+                    alt="{{ product.name }}"
+                />
+            </div>
+            <div class="product-buttons">
+                <span>
+                    {{ product.gender }}
+                </span>
+                <a class="reset-link" href="{% url 'product_detail' product.id %}">View detail</a>
+            </div>
+            <div class="product-info">
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

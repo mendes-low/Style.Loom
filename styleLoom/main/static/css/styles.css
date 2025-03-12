@@ -193,5 +193,116 @@ footer {
     border-right: 2px solid var(--color-grey-50);
     padding-right: 10px;
 }
+
 /* ===== FOOTER END ===== */
 
+/* ===== PRODUCTS ===== */
+.products-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 100px 120px;
+    border: 2px dashed var(--color-dark-15);
+    border-radius: 20px;
+}
+
+.products-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+    padding: 80px;
+    width: 100%;
+    border-bottom: 2px dashed var(--color-dark-15);
+}
+
+.products-header h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--color-abs-white);
+}
+
+.products-header p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-grey-40);
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    /* width: 100%; */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 320px;
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px dashed var(--color-dark-15);
+}
+
+.product-img {
+    width: 270px;
+    height: 250px;
+    /* object-fit: contain; */
+    border-radius: 50px 50px 0px 0px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.product-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.product-buttons span {
+    padding: 10px 25px;
+    border-radius: 100px;
+    border: 1px dashed var(--color-dark-15);
+    background: var(--color-dark-10);
+    color: var(--color-grey-70);
+}
+
+.product-buttons a {
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px dashed var(--color-dark-25);
+    background: var(--color-dark-12);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.product-info h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-abs-white);
+}
+
+.product-info p {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-grey-80);
+}

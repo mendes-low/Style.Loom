@@ -1,6 +1,9 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %}
+ 
 {% block title %}Home{% endblock %}
 
+{% comment %} <img src="{% static "images/main-picture.svg" %}" alt="main-picture"> {% endcomment %}
 {% block content %}
-<h1>Home</h1>
+
 {% endblock %}
