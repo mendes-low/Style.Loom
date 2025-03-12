@@ -3,7 +3,33 @@
  
 {% block title %}Home{% endblock %}
 
-{% comment %} <img src="{% static "images/main-picture.svg" %}" alt="main-picture"> {% endcomment %}
 {% block content %}
-
+<div class="products-container">
+    <div class="products-header">
+        <h1>Elevate Your Style with Our Latest Collection</h1>
+        <p>Each piece is crafted to enhance your fashion statement.</p>
+    </div>
+    <div class="products">
+        {% for product in products|slice:":12" %}
+        <div class="product">
+            <div class="product-img">
+                <img
+                    src="{% if product.image %}{{ product.image.url }} {% else %}{% static 'images/noname.png' %}{% endif %}"
+                    alt="{{ product.name }}"
+                />
+            </div>
+            <div class="product-buttons">
+                <span>
+                    {{ product.gender }}
+                </span>
+                <a class="reset-link" href="{% url 'product_detail' product.id %}">View detail</a>
+            </div>
+            <div class="product-info">
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

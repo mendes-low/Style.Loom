@@ -1,12 +1,67 @@
 {% extends 'base.html' %} 
 {% load static %}
 
-{% block title %}Product Page{% endblock %}
-
+{% block title %}Product Page{% endblock %} 
+ 
 {% block content %}
-<h1>Product Page</h1>
-<h2>{{ product.name }}</h2>
-<p>{{ product.description }}</p>
-<p>{{ product.price }}</p>
-<img src="{% if product.image %}{{ product.image.url }} {% else %}{% static 'images/noname.png' %}{% endif %}" alt="{{ product.name }}">
+<div class="product-detail-container">
+    <div class="product-detail">
+        <div class="product-detail-img">
+            <img
+                src="{% if product.image %}{{ product.image.url }} {% else %}{% static 'images/noname.png' %}{% endif %}"
+                alt="{{ product.name }}"
+            />
+        </div>
+        <div class="product-detail-info">
+            <div class="product-detail-info-header">
+                <h1>{{ product.name }}</h1>
+                <p class="product-detail-description">
+                    {{ product.description }}
+                </p>
+            </div>
+            <div class="product-detail-info-footer">
+                <p class="product-detail-price">Price: ${{ product.price }}</p>
+                <a href="#" class="reset-link">Add to Cart</a>
+            </div>
+            <p class="product-general-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                amet, vitae minima asperiores doloremque laudantium aperiam
+                obcaecati sequi labore, hic deserunt. Architecto vero voluptas
+                ex ducimus ipsa magnam nemo soluta, nesciunt voluptates numquam
+                sit quia eaque deleniti accusamus, quisquam facere iusto eos.
+                Cum error ipsum perspiciatis, dolore laboriosam aut dicta?
+            </p>
+        </div>
+    </div>
+    
+    <div class="products-similar-container">
+        <div class="products-header">
+            <h1>Similir products you may like</h1>
+        </div>
+        <div class="products">
+            {% for related_product in related_products %}
+            <div class="product">
+                <div class="product-img">
+                    <img
+                        src="{% if related_product.image %}{{ related_product.image.url }} {% else %}{% static 'images/noname.png' %}{% endif %}"
+                        alt="{{ related_product.name }}"
+                    />
+                </div>
+                <div class="product-buttons">
+                    <span> {{ related_product.gender }} </span>
+                    <a
+                        class="reset-link"
+                        href="{% url 'product_detail' related_product.id %}"
+                        >View detail</a
+                    >
+                </div>
+                <div class="product-info">
+                    <h2>{{ related_product.name }}</h2>
+                    <p>${{ related_product.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
