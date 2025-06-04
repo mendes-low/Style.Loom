@@ -1,52 +1,52 @@
 # StyleLoom
 
-StyleLoom – это интернет-магазин модной одежды, где можно найти как последние тренды, так и классическую одежду для мужчин, женщин и детей.
+**StyleLoom** is an online fashion store where you can find the latest trends as well as classic clothing for men, women, and children.
 
-## 🚀 Функционал
-- Просмотр каталога товаров
-- Фильтрация товаров по категориям (Men's, Women's, Kids)
-- Страница с деталями товара
+## 🚀 Features
+- Browse product catalog
+- Filter products by categories (Men's, Women's, Kids)
+- Product detail page
 
-## 🛠️ Технологии
-- **Backend:** Django
-- **Frontend:** HTML, CSS
-- **База данных:** SQLite (по умолчанию)
-- **Шаблоны:** Django Template Language (DTL)
+## 🛠️ Technologies
+- **Backend:** Django  
+- **Frontend:** HTML, CSS  
+- **Database:** SQLite (default)  
+- **Templates:** Django Template Language (DTL)
 
 ---
 
-## 📦 Установка и запуск
+## 📦 Installation & Run
 
-### 1️⃣ Клонирование репозитория
-```
+### 1️⃣ Clone the repository
+```bash
 git clone https://github.com/mendes-low/Style.Loom
 cd styleLoom
 ```
 
-### 2️⃣ Создание и активация виртуального окружения 
+### 2️⃣ Create and activate a virtual environment
 ```
 python -m venv venv
-source venv/bin/activate  # Для MacOS/Linux
-venv\Scripts\activate     # Для Windows
+source venv/bin/activate  # For MacOS/Linux
+venv\Scripts\activate     # For Windows
 ```
 
-### 3️⃣ Установка зависимостей
+### 3️⃣ Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Применение миграций
+### 4️⃣ Apply migrations
 ```
 python manage.py migrate
 ```
 
-### 5️⃣ Создание суперпользователя (необязательно)
+### 5️⃣ Create a superuser (optional)
 ```
 python manage.py createsuperuser
 ```
-#### Введи имя, email и пароль для входа в админку.
+#### Enter a username, email, and password for admin access.
 
-### 6️⃣ Запуск сервера
+### 6️⃣ Run the server
 ```
 python manage.py runserver
 ```
